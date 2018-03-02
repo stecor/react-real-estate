@@ -373,7 +373,7 @@ var Listings = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { className: 'listings' },
+        { id: 'listings' },
         _react2.default.createElement(
           'section',
           { className: 'search-area' },
@@ -384,7 +384,7 @@ var Listings = function (_Component) {
           { className: 'sortby-area' },
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'results' },
             '390 results found'
           ),
           _react2.default.createElement(
