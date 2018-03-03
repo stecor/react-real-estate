@@ -26,12 +26,27 @@ class App extends Component {
       gym: false,
       swimming_pool:false,
       filterData: listingsData,
-      populateFormsData: ''
+      populateFormsData: '',
+      sortby: 'price-asc',
+      view: 'box'
     }
+    
     
     this.change = this.change.bind(this)
     this.filterData = this.filterData.bind(this)
     this.populateForms = this.populateForms.bind(this)
+    this.changeView = this.changeView.bind(this)
+  }
+  
+  componentWillMount(){
+    
+    var listingsData = this.state.listingsData.sort((a,b) => {
+      return a.price - b.price
+    })
+    
+    this.setState({
+      listingsData
+    })
   }
   
   change(event){
@@ -44,6 +59,12 @@ class App extends Component {
     }, () => {
       console.log(this.state);
       this.filterData()
+    })
+  }
+  
+  changeView(viewName){
+    this.setState({
+        view: viewName
     })
   }
   
@@ -68,6 +89,18 @@ class App extends Component {
       })
     }
     
+    if(this.state.sortby == "price-asc"){
+      newData = newData.sort((a,b) => {
+        return a.price - b.price
+      })
+    }
+    
+    if(this.state.sortby == "price-dsc"){
+      newData = newData.sort((a,b) => {
+        return b.price - a.price
+      })
+    }
+    
     this.setState({
       filterData: newData
     })
@@ -82,6 +115,8 @@ class App extends Component {
     cities = new Set(cities)
     cities = [...cities]
     
+    cities = cities.sort()
+    
     //homeType
     var homeTypes = this.state.listingsData.map((item) =>{
       return item.homeType
@@ -89,12 +124,16 @@ class App extends Component {
     homeTypes = new Set(homeTypes)
     homeTypes = [...homeTypes]
     
+    homeTypes = homeTypes.sort()
+    
     //bedrooms
     var bedrooms = this.state.listingsData.map((item) =>{
       return item.rooms
     })
     bedrooms = new Set(bedrooms)
     bedrooms = [...bedrooms]
+    
+    bedrooms = bedrooms.sort()
     
     this.setState({
       populateFormsData: {
@@ -114,8 +153,8 @@ class App extends Component {
       <div>
         <Header />
         <section id="content-area">
-          <Filter change={this.change}  globalState={this.state} populateAction={this.populateForms}/>
-          <Listings listingsData={this.state.filterData}/>
+          <Filter change={this.change} populateAction={this.populateForms} globalState={this.state}/>
+          <Listings listingsData={this.state.filterData} change={this.change} globalState={this.state} changeView={this.changeView}/>
         </section>
       </div>)
   }
