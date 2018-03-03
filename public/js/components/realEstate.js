@@ -176,7 +176,8 @@ var App = function (_Component) {
       filterData: _listingsData2.default,
       populateFormsData: '',
       sortby: 'price-asc',
-      view: 'box'
+      view: 'box',
+      search: ''
     };
 
     _this.change = _this.change.bind(_this);
@@ -248,6 +249,18 @@ var App = function (_Component) {
       if (this.state.sortby == "price-dsc") {
         newData = newData.sort(function (a, b) {
           return b.price - a.price;
+        });
+      }
+
+      if (this.state.search != '') {
+        newData = newData.filter(function (item) {
+          var city = item.city.toLowerCase();
+          var searchText = _this3.state.search.toLowerCase();
+          var n = city.match(searchText);
+
+          if (n != null) {
+            return true;
+          }
         });
       }
 
@@ -754,7 +767,8 @@ var Listings = function (_Component) {
                         _react2.default.createElement(
                           'span',
                           null,
-                          '1000 ft\xB2'
+                          listing.floorSpace,
+                          ' ft\xB2'
                         )
                       ),
                       _react2.default.createElement(
@@ -764,7 +778,7 @@ var Listings = function (_Component) {
                         _react2.default.createElement(
                           'span',
                           null,
-                          listing.bedrooms,
+                          listing.rooms,
                           ' bedrooms'
                         )
                       )
@@ -851,7 +865,8 @@ var Listings = function (_Component) {
                         _react2.default.createElement(
                           'span',
                           null,
-                          '1000 ft\xB2'
+                          listing.floorSpace,
+                          ' ft\xB2'
                         )
                       ),
                       _react2.default.createElement(
@@ -861,7 +876,7 @@ var Listings = function (_Component) {
                         _react2.default.createElement(
                           'span',
                           null,
-                          listing.bedrooms,
+                          listing.rooms,
                           ' bedrooms'
                         )
                       )
@@ -908,7 +923,7 @@ var Listings = function (_Component) {
         _react2.default.createElement(
           'section',
           { className: 'search-area' },
-          _react2.default.createElement('input', { type: 'text', name: 'search' })
+          _react2.default.createElement('input', { type: 'text', name: 'search', onChange: this.props.change })
         ),
         _react2.default.createElement(
           'section',
@@ -916,7 +931,8 @@ var Listings = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'results' },
-            '390 results found'
+            this.props.globalState.filterData.length,
+            ' results found'
           ),
           _react2.default.createElement(
             'div',
@@ -946,48 +962,56 @@ var Listings = function (_Component) {
         _react2.default.createElement(
           'section',
           { className: 'listings-results' },
-          this.loopListings()
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            this.loopListings()
+          )
         ),
         _react2.default.createElement(
           'section',
           { id: 'pagination' },
           _react2.default.createElement(
-            'ul',
-            { className: 'pages' },
+            'div',
+            { className: 'row' },
             _react2.default.createElement(
-              'li',
-              null,
-              'Prev'
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'active' },
-              '1'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              '2'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              '3'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              '4'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              '5'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              'next'
+              'ul',
+              { className: 'pages' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Prev'
+              ),
+              _react2.default.createElement(
+                'li',
+                { className: 'active' },
+                '1'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                '2'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                '3'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                '4'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                '5'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'next'
+              )
             )
           )
         )
