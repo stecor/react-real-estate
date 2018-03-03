@@ -10,7 +10,7 @@ var listingsData =[
       'elevator',
       'gym'
     ],
-    homeType: 'apartment',
+    homeType: 'Apartment',
     image: 'http://www.nyhabitat.com/picture-ny-apt/16210/16210D02.jpg'
   },
   {
@@ -24,21 +24,21 @@ var listingsData =[
       'elevator',
       'gym'
     ],
-    homeType: 'apartment',
+    homeType: 'Apartment',
     image: 'https://www.apartmentbarcelona.com/images/home/apartment-02.jpg'
   },
   {
     address: '2 Main St.',
     city: 'Richmond',
     state: 'VA',
-    rooms: 1,
+    rooms: 0,
     price: 340500,
     floorSpace: 1520,
     extras: [
       'elevator',
       'gym'
     ],
-    homeType: 'apartment',
+    homeType: 'Studio',
     image: 'https://cdn.trendhunterstatic.com/thumbs/barcelona-home.jpeg'
   },
   {
@@ -52,7 +52,7 @@ var listingsData =[
       'elevator',
       'gym'
     ],
-    homeType: 'apartment',
+    homeType: 'Apartment',
     image: 'https://res.cloudinary.com/apartmentlist/image/upload/t_fullsize/2fd366bc426187b997f83974f501b1a7.jpg'
   },
   {
@@ -85,23 +85,23 @@ var listingsData =[
   },
   {
     address: '33 Universal St.',
-    city: 'Ridgewood',
-    state: 'NJ',
-    rooms: 1,
+    city: 'Miami',
+    state: 'FL',
+    rooms: 0,
     price: 1100,
     floorSpace: 1350,
     extras: [
       'elevator',
       'pool'
     ],
-    homeType: 'Apartment',
+    homeType: 'Studio',
     image: 'http://img.archilovers.com/projects/b_730_a748e5d0-0a49-4b4f-896e-20db005ee71a.jpg'
   },
   {
     address: '22 James Ave',
     city: 'San Francisco',
     state: 'CA',
-    rooms: 2,
+    rooms: 1,
     price: 1300,
     floorSpace: 2450,
     extras: [
@@ -114,13 +114,13 @@ var listingsData =[
     address: '55 King Ave',
     city: 'Hollywood',
     state: 'CA',
-    rooms: 2,
+    rooms: 1,
     price: 33080,
     floorSpace: 3050,
     extras: [
       'elevator'
     ],
-    homeType: 'Apartment',
+    homeType: 'Room',
     image: 'http://asbienestar.co/wp-content/uploads/2018/01/college-apartment-living-room-new-in-cute-rooms-design.jpg'
   }
 ]
