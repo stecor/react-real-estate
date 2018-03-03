@@ -1,7 +1,7 @@
 var listingsData =[
   {
     address: '20-34 Grand Ave',
-    City: 'Ridgewood',
+    city: 'Ridgewood',
     state: 'NY',
     rooms: 3,
     price: 220000,
@@ -14,9 +14,9 @@ var listingsData =[
     image: 'http://www.nyhabitat.com/picture-ny-apt/16210/16210D02.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
-    state: 'VA',
+    address: '730 Gates Ave',
+    city: 'Orlando',
+    state: 'FL',
     rooms: 2,
     price: 120660,
     floorSpace: 1340,
@@ -28,9 +28,9 @@ var listingsData =[
     image: 'https://www.apartmentbarcelona.com/images/home/apartment-02.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
-    state: 'NY',
+    address: '2 Main St.',
+    city: 'Richmond',
+    state: 'VA',
     rooms: 1,
     price: 340500,
     floorSpace: 1520,
@@ -42,9 +42,9 @@ var listingsData =[
     image: 'https://cdn.trendhunterstatic.com/thumbs/barcelona-home.jpeg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
-    state: 'NJ',
+    address: '43 Hollywood blvd',
+    city: 'Los Angeles',
+    state: 'CA',
     rooms: 3,
     price: 80000,
     floorSpace: 900,
@@ -56,9 +56,9 @@ var listingsData =[
     image: 'https://res.cloudinary.com/apartmentlist/image/upload/t_fullsize/2fd366bc426187b997f83974f501b1a7.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
-    state: 'NJ',
+    address: '889 Beemore St.',
+    city: 'Bedstuy',
+    state: 'NY',
     rooms: 4,
     price: 180000,
     floorSpace: 3000,
@@ -70,9 +70,9 @@ var listingsData =[
     image: 'https://images1.apartments.com/i2/xK1fTqYgboEiGFIsME-ScfOhwuxbbwpjriBmpzAMsrM/117/image.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
-    state: 'NJ',
+    address: '15 Presid. Plaza',
+    city: 'Springfield',
+    state: 'IN',
     rooms: 3,
     price: 165000,
     floorSpace: 2500,
@@ -84,8 +84,8 @@ var listingsData =[
     image: 'https://teja10.kuikr.com/i5/20171028/1350-Sq-ft-Apartment-for-sale-in-Gajuwaka--Vizag-VB201705171774173-ak_LWBP1249427755-1509180551_lg.jpeg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
+    address: '33 Universal St.',
+    city: 'Ridgewood',
     state: 'NJ',
     rooms: 1,
     price: 1100,
@@ -98,8 +98,8 @@ var listingsData =[
     image: 'http://img.archilovers.com/projects/b_730_a748e5d0-0a49-4b4f-896e-20db005ee71a.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
+    address: '22 James Ave',
+    city: 'San Francisco',
     state: 'CA',
     rooms: 2,
     price: 1300,
@@ -111,8 +111,8 @@ var listingsData =[
     image: 'https://www.digsdigs.com/photos/dramatic-and-luxurious-apartment-in-dark-colors-1-554x363.jpg'
   },
   {
-    address: '20-34 Grand Ave',
-    City: 'Ridgewood',
+    address: '55 King Ave',
+    city: 'Hollywood',
     state: 'CA',
     rooms: 2,
     price: 33080,
