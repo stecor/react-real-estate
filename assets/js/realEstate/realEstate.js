@@ -5,6 +5,7 @@ import Filter from './Filter'
 import Listings from './Listings'
 import listingsData from './data/listingsData'
 
+
 class App extends Component {
   
   constructor () {

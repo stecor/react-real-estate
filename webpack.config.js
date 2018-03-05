@@ -40,6 +40,11 @@ module.exports = {
                     sourceMap: true
                 }
             }]
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loader: "file-loader?name=public/img/[name].[ext]",
+          //include: 'public/img'
         }
     ]
   },

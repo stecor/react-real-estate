@@ -4,8 +4,17 @@ header{
   overflow: auto;
   padding: 20px 15px; 
   .logo{
-    float:left;  
+    float:left; 
+    padding-left: 100px;
+    text-align: right;
+    
+    
+    .detailLogo{
+      font-size: 1.7rem;
+    }
   }
+  
+  
   
   nav{
     float: right;
@@ -18,10 +27,10 @@ header{
       font-size: .9rem;
       
       &:hover {
-        color: $pink;
+        color: $purple;
       }
       &.register-btn{
-        background: $pink;
+        background: $purple;
         padding: 7px 25px;
         text-align: center;
         color: #FFF;

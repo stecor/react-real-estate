@@ -64,32 +64,35 @@ export default class Filter extends Component {
        <div className="inside">
          <h4>Filter</h4>
          
-         <label htmlFor="city">City</label>
          <select name= "city" className="filters city" onChange={this.props.change}>
-          <option value="All" >All</option>
+          <option value="All" >All Cities</option>
           {this.cities()}
          </select>
          
-         <label htmlFor="homeType">Home Type</label>
          <select name= "homeType" className="filters homeType" onChange={this.props.change}>
-           <option value="All" >All</option>
+           <option value="All" >All Home Types</option>
            {this.homeTypes()}
          </select>
-         <label htmlFor="bedrooms">Bedrooms</label>
+         <label htmlFor="bedrooms"></label>
          <select name= "bedrooms" className="filters bedrooms" onChange={this.props.change}>
-          <option value="0">0+</option>
+          <option value="0">All Bedrooms</option>
           {this.bedrooms()}
           
          </select>
          <div className="filters price">
-          <span className="title price">Price</span>
-          <input type="text" name ="min_price" className="min-price" onChange={this.props.change} value={this.props.globalState.min_price}/>
-          <input type="text" name ="max_price" className="max-price" onChange={this.props.change} value={this.props.globalState.max_price}/>
+            <span className="title price">Price</span>
+            <label htmlFor="min_price">Min.</label>
+            <input type="text" name ="min_price" className="min-price" onChange={this.props.change} value={this.props.globalState.min_price}/>
+            <label htmlFor="max_price">Min.</label>
+            <input type="text" name ="max_price" className="max-price" onChange={this.props.change} value={this.props.globalState.max_price}/>
          </div>
+         
          <div className="filters floor-space">
-          <span className="title floor-space">Floor Space</span>
-          <input type="text" name ="min_floor_space" className="min-floor-space" onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
-          <input type="text" name ="max_floor_space" className="max-floor-space" onChange={this.props.change} value={this.props.globalState.max_floor_space}/>
+            <span className="title floor-space">Floor Space</span>
+            <label htmlFor="min_floor_space">Min.</label>
+            <input type="text" name ="min_floor_space" className="min-floor-space" onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
+            <label htmlFor="max_floor_space">Max.</label>
+            <input type="text" name ="max_floor_space" className="max-floor-space" onChange={this.props.change} value={this.props.globalState.max_floor_space}/>
          </div>
          
          <div className="filters extras">
@@ -99,22 +102,32 @@ export default class Filter extends Component {
             <span>Elevator</span> 
             <input type="checkbox" value="elevator" name="elevator" onChange={this.props.change}/>
           </label>
-         
+          <hr/>
           <label htmlFor="swimming_pool">
             <span>Swimming Pool</span> 
             <input type="checkbox" value="swimming-pool" name="swimming_pool" onChange={this.props.change}/>
           </label>
-               
-          <label htmlFor="finished_basement">
-            <span>Finished Basement</span> 
-            <input type="checkbox" value="finished-basement" name="finished_basement" onChange={this.props.change}/>
+          <hr/>   
+          <label htmlFor="basement">
+            <span>Basement</span> 
+            <input type="checkbox" value="basement" name="basement" onChange={this.props.change}/>
           </label>
-         
+          <hr/>
           <label htmlFor="gym">
             <span>Gym</span> 
             <input type="checkbox" value="gym" name="gym" onChange={this.props.change}/>
           </label>
-          
+          <hr/>
+          <label htmlFor="storage">
+            <span>Storage</span> 
+            <input type="checkbox" value="storage" name="storage" onChange={this.props.change}/>
+          </label>
+          <hr/>
+          <label htmlFor="parking">
+            <span>Parking</span> 
+            <input type="checkbox" value="parking" name="parking" onChange={this.props.change}/>
+          </label>
+          <hr/>
          </div>
        </div>
       </section>

@@ -9,19 +9,24 @@ export default class Listings extends Component {
     }
     this.loopListings= this.loopListings.bind(this)
   }
+  
   clickedBtn = () => {
     console.log('swag')
   }
   
+  
+  
   loopListings(){
     
-    var {listingsData} = this.props
+    var {listingsData} = this.props   
     
     if(listingsData == undefined || listingsData.length == 0){
       return "Sorry your filter did not match any listing"
     }
     
     return listingsData.map((listing, index) => {
+      
+      var formatedPrice = listing.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
       
       if(this.props.globalState.view == 'box'){
         
@@ -33,12 +38,11 @@ export default class Listings extends Component {
           <span className="address">{listing.address}</span>
           <div className="details">
           <div className="col-md-3">
-            <div className="user-img"></div>
+            <img className="user-img-box" src={listing.userImg} alt="" />
           </div>
           <div className="col-md-9">
             <div className="user-details">
-              <span className="user-name">Nina Smith</span>
-              <span className="post-date">05/05/2017</span>
+              <span className="user-name">{listing.user}</span>
             </div>
           <div className="listing-details">
             <div className="floor-space">
@@ -47,17 +51,18 @@ export default class Listings extends Component {
             </div>
             <div className="bedrooms">
               <i className="fa fa-bed"></i>
-              <span>{listing.rooms} bedrooms</span>
+              <span>{listing.rooms} bedr.</span>
               </div>
             </div> 
             <div className="view-btn">
-              View Listing
+              Details
             </div>
+            <span className="post-date">Posted: {listing.postDate}</span>
             </div> 
           </div>
         </div>
         <div className="bottom-info">
-         <span className="price">${listing.price}</span>
+         <span className="price">${formatedPrice}</span>
          <span className="location"> <i className="fa fa-map-marker"></i> {listing.city} , {listing.state}</span>
         </div>
       </div>
@@ -73,12 +78,11 @@ export default class Listings extends Component {
          <span className="address">{listing.address}</span>
          <div className="details">
          <div className="col-md-3">
-           <div className="user-img"></div>
+           <img className="user-img-long" src={listing.userImg} alt="" />
          </div>
          <div className="col-md-9">
            <div className="user-details">
-             <span className="user-name">Nina Smith</span>
-             <span className="post-date">05/05/2017</span>
+             <span className="user-name">{listing.user}</span>
            </div>
          <div className="listing-details">
            <div className="floor-space">
@@ -87,17 +91,18 @@ export default class Listings extends Component {
            </div>
            <div className="bedrooms">
              <i className="fa fa-bed"></i>
-             <span>{listing.rooms} bedrooms</span>
+             <span>{listing.rooms} bedr.</span>
              </div>
            </div> 
            <div className="view-btn">
-             View Listing
+             Details
            </div>
+           <span className="post-date">Posted on: {listing.postDate}</span>
            </div> 
          </div>
        </div>
        <div className="bottom-info">
-        <span className="price">${listing.price}</span>
+        <span className="price">${formatedPrice}</span>
         <span className="location"> <i className="fa fa-map-marker"></i> {listing.city} , {listing.state}</span>
        </div>
      </div>

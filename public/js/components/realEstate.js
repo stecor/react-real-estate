@@ -10,6 +10,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var listingsData = [{
+  user: 'Paul Brown',
+  userImg: 'https://d2hf58r9a1e06k.cloudfront.net/images/15-16/OneManTwoGuvnors/OneManTwoGuvs_328-bw2.jpg',
+  postDate: '05/05/2017',
   address: '20-34 Grand Ave',
   city: 'Ridgewood',
   state: 'NY',
@@ -20,6 +23,9 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'http://www.nyhabitat.com/picture-ny-apt/16210/16210D02.jpg'
 }, {
+  user: 'July Peterson',
+  userImg: 'https://i.cbc.ca/1.4518676.1517693933!/fileImage/httpImage/image.JPG_gen/derivatives/square_60/von-scheel-headshot.JPG',
+  postDate: '05/10/2016',
   address: '730 Gates Ave',
   city: 'Orlando',
   state: 'FL',
@@ -30,6 +36,9 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'https://www.apartmentbarcelona.com/images/home/apartment-02.jpg'
 }, {
+  user: 'Carl Seagan',
+  userImg: 'http://i.dailymail.co.uk/i/furniture/live_commentary/commentators/60x60_Spencer%20Morgan.jpg',
+  postDate: '18/10/2017',
   address: '2 Main St.',
   city: 'Richmond',
   state: 'VA',
@@ -40,6 +49,9 @@ var listingsData = [{
   homeType: 'Studio',
   image: 'https://cdn.trendhunterstatic.com/thumbs/barcelona-home.jpeg'
 }, {
+  user: 'Mary Justin',
+  userImg: 'https://www.image-tmart.com/prodimgs_v2/1/1001/5530/10015530/18-Woman-Long-Remy-Human-Hair-Full-Wigs-with-Bang-Flax-Yellow_3_60x60.jpg?1443075103',
+  postDate: '18/10/2017',
   address: '43 Hollywood blvd',
   city: 'Los Angeles',
   state: 'CA',
@@ -50,6 +62,9 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'https://res.cloudinary.com/apartmentlist/image/upload/t_fullsize/2fd366bc426187b997f83974f501b1a7.jpg'
 }, {
+  user: 'Joseph Kern',
+  userImg: 'https://i.vimeocdn.com/portrait/22563993_60x60.jpg',
+  postDate: '20/01/2018',
   address: '889 Beemore St.',
   city: 'Bedstuy',
   state: 'NY',
@@ -60,6 +75,9 @@ var listingsData = [{
   homeType: 'Condo',
   image: 'https://images1.apartments.com/i2/xK1fTqYgboEiGFIsME-ScfOhwuxbbwpjriBmpzAMsrM/117/image.jpg'
 }, {
+  user: 'Miriam Lindsey',
+  userImg: 'https://i.cbc.ca/1.3966333.1509844038!/fileImage/httpImage/image.jpg_gen/derivatives/square_60/shanifa-nasser.jpg',
+  postDate: '20/01/2018',
   address: '15 Presid. Plaza',
   city: 'Springfield',
   state: 'IN',
@@ -70,6 +88,9 @@ var listingsData = [{
   homeType: 'Condo',
   image: 'https://teja10.kuikr.com/i5/20171028/1350-Sq-ft-Apartment-for-sale-in-Gajuwaka--Vizag-VB201705171774173-ak_LWBP1249427755-1509180551_lg.jpeg'
 }, {
+  user: 'Mark Philips',
+  userImg: 'http://prod.static.ravens.clubs.nfl.com//assets/images/imported/BAL/article-thumbnails/RyanMink.jpg',
+  postDate: '15/02/2016',
   address: '33 Universal St.',
   city: 'Miami',
   state: 'FL',
@@ -80,6 +101,9 @@ var listingsData = [{
   homeType: 'Studio',
   image: 'http://img.archilovers.com/projects/b_730_a748e5d0-0a49-4b4f-896e-20db005ee71a.jpg'
 }, {
+  user: 'Andrew Carl',
+  userImg: 'http://prod.static.bears.clubs.nfl.com//assets/images/imported/CHI/photos/person-headshots/writers/mayer_larry_60x60.jpg',
+  postDate: '05/02/2017',
   address: '22 James Ave',
   city: 'San Francisco',
   state: 'CA',
@@ -90,6 +114,9 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'https://www.digsdigs.com/photos/dramatic-and-luxurious-apartment-in-dark-colors-1-554x363.jpg'
 }, {
+  user: 'Lara Andrew',
+  userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPITNpCV9RaUKp-_B5ypMLep55PMsGbhuk0QMNOx-2FriIuzrR',
+  postDate: '25/05/2016',
   address: '55 King Ave',
   city: 'Hollywood',
   state: 'CA',
@@ -447,24 +474,14 @@ var Filter = function (_Component) {
             "Filter"
           ),
           _react2.default.createElement(
-            "label",
-            { htmlFor: "city" },
-            "City"
-          ),
-          _react2.default.createElement(
             "select",
             { name: "city", className: "filters city", onChange: this.props.change },
             _react2.default.createElement(
               "option",
               { value: "All" },
-              "All"
+              "All Cities"
             ),
             this.cities()
-          ),
-          _react2.default.createElement(
-            "label",
-            { htmlFor: "homeType" },
-            "Home Type"
           ),
           _react2.default.createElement(
             "select",
@@ -472,22 +489,18 @@ var Filter = function (_Component) {
             _react2.default.createElement(
               "option",
               { value: "All" },
-              "All"
+              "All Home Types"
             ),
             this.homeTypes()
           ),
-          _react2.default.createElement(
-            "label",
-            { htmlFor: "bedrooms" },
-            "Bedrooms"
-          ),
+          _react2.default.createElement("label", { htmlFor: "bedrooms" }),
           _react2.default.createElement(
             "select",
             { name: "bedrooms", className: "filters bedrooms", onChange: this.props.change },
             _react2.default.createElement(
               "option",
               { value: "0" },
-              "0+"
+              "All Bedrooms"
             ),
             this.bedrooms()
           ),
@@ -499,7 +512,17 @@ var Filter = function (_Component) {
               { className: "title price" },
               "Price"
             ),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "min_price" },
+              "Min."
+            ),
             _react2.default.createElement("input", { type: "text", name: "min_price", className: "min-price", onChange: this.props.change, value: this.props.globalState.min_price }),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "max_price" },
+              "Min."
+            ),
             _react2.default.createElement("input", { type: "text", name: "max_price", className: "max-price", onChange: this.props.change, value: this.props.globalState.max_price })
           ),
           _react2.default.createElement(
@@ -510,7 +533,17 @@ var Filter = function (_Component) {
               { className: "title floor-space" },
               "Floor Space"
             ),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "min_floor_space" },
+              "Min."
+            ),
             _react2.default.createElement("input", { type: "text", name: "min_floor_space", className: "min-floor-space", onChange: this.props.change, value: this.props.globalState.min_floor_space }),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "max_floor_space" },
+              "Max."
+            ),
             _react2.default.createElement("input", { type: "text", name: "max_floor_space", className: "max-floor-space", onChange: this.props.change, value: this.props.globalState.max_floor_space })
           ),
           _react2.default.createElement(
@@ -531,6 +564,7 @@ var Filter = function (_Component) {
               ),
               _react2.default.createElement("input", { type: "checkbox", value: "elevator", name: "elevator", onChange: this.props.change })
             ),
+            _react2.default.createElement("hr", null),
             _react2.default.createElement(
               "label",
               { htmlFor: "swimming_pool" },
@@ -541,16 +575,18 @@ var Filter = function (_Component) {
               ),
               _react2.default.createElement("input", { type: "checkbox", value: "swimming-pool", name: "swimming_pool", onChange: this.props.change })
             ),
+            _react2.default.createElement("hr", null),
             _react2.default.createElement(
               "label",
-              { htmlFor: "finished_basement" },
+              { htmlFor: "basement" },
               _react2.default.createElement(
                 "span",
                 null,
-                "Finished Basement"
+                "Basement"
               ),
-              _react2.default.createElement("input", { type: "checkbox", value: "finished-basement", name: "finished_basement", onChange: this.props.change })
+              _react2.default.createElement("input", { type: "checkbox", value: "basement", name: "basement", onChange: this.props.change })
             ),
+            _react2.default.createElement("hr", null),
             _react2.default.createElement(
               "label",
               { htmlFor: "gym" },
@@ -560,7 +596,30 @@ var Filter = function (_Component) {
                 "Gym"
               ),
               _react2.default.createElement("input", { type: "checkbox", value: "gym", name: "gym", onChange: this.props.change })
-            )
+            ),
+            _react2.default.createElement("hr", null),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "storage" },
+              _react2.default.createElement(
+                "span",
+                null,
+                "Storage"
+              ),
+              _react2.default.createElement("input", { type: "checkbox", value: "storage", name: "storage", onChange: this.props.change })
+            ),
+            _react2.default.createElement("hr", null),
+            _react2.default.createElement(
+              "label",
+              { htmlFor: "parking" },
+              _react2.default.createElement(
+                "span",
+                null,
+                "Parking"
+              ),
+              _react2.default.createElement("input", { type: "checkbox", value: "parking", name: "parking", onChange: this.props.change })
+            ),
+            _react2.default.createElement("hr", null)
           )
         )
       );
@@ -623,7 +682,13 @@ var Header = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'logo' },
-          'Logo'
+          _react2.default.createElement(
+            'span',
+            { className: 'detailLogo' },
+            'realties.ca'
+          ),
+          _react2.default.createElement('br', null),
+          'real estate'
         ),
         _react2.default.createElement(
           'nav',
@@ -715,6 +780,8 @@ var Listings = function (_Component) {
 
       return listingsData.map(function (listing, index) {
 
+        var formatedPrice = listing.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+
         if (_this2.props.globalState.view == 'box') {
 
           //this is the box view
@@ -738,7 +805,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'col-md-3' },
-                    _react2.default.createElement('div', { className: 'user-img' })
+                    _react2.default.createElement('img', { className: 'user-img-box', src: listing.userImg, alt: '' })
                   ),
                   _react2.default.createElement(
                     'div',
@@ -749,12 +816,7 @@ var Listings = function (_Component) {
                       _react2.default.createElement(
                         'span',
                         { className: 'user-name' },
-                        'Nina Smith'
-                      ),
-                      _react2.default.createElement(
-                        'span',
-                        { className: 'post-date' },
-                        '05/05/2017'
+                        listing.user
                       )
                     ),
                     _react2.default.createElement(
@@ -779,14 +841,20 @@ var Listings = function (_Component) {
                           'span',
                           null,
                           listing.rooms,
-                          ' bedrooms'
+                          ' bedr.'
                         )
                       )
                     ),
                     _react2.default.createElement(
                       'div',
                       { className: 'view-btn' },
-                      'View Listing'
+                      'Details'
+                    ),
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'post-date' },
+                      'Posted: ',
+                      listing.postDate
                     )
                   )
                 )
@@ -798,7 +866,7 @@ var Listings = function (_Component) {
                   'span',
                   { className: 'price' },
                   '$',
-                  listing.price
+                  formatedPrice
                 ),
                 _react2.default.createElement(
                   'span',
@@ -836,7 +904,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'col-md-3' },
-                    _react2.default.createElement('div', { className: 'user-img' })
+                    _react2.default.createElement('img', { className: 'user-img-long', src: listing.userImg, alt: '' })
                   ),
                   _react2.default.createElement(
                     'div',
@@ -847,12 +915,7 @@ var Listings = function (_Component) {
                       _react2.default.createElement(
                         'span',
                         { className: 'user-name' },
-                        'Nina Smith'
-                      ),
-                      _react2.default.createElement(
-                        'span',
-                        { className: 'post-date' },
-                        '05/05/2017'
+                        listing.user
                       )
                     ),
                     _react2.default.createElement(
@@ -877,14 +940,20 @@ var Listings = function (_Component) {
                           'span',
                           null,
                           listing.rooms,
-                          ' bedrooms'
+                          ' bedr.'
                         )
                       )
                     ),
                     _react2.default.createElement(
                       'div',
                       { className: 'view-btn' },
-                      'View Listing'
+                      'Details'
+                    ),
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'post-date' },
+                      'Posted on: ',
+                      listing.postDate
                     )
                   )
                 )
@@ -896,7 +965,7 @@ var Listings = function (_Component) {
                   'span',
                   { className: 'price' },
                   '$',
-                  listing.price
+                  formatedPrice
                 ),
                 _react2.default.createElement(
                   'span',
