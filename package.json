@@ -1,11 +1,11 @@
 {
-  "name": "CodingPhase-StarterKit",
+  "name": "StarterKit",
   "version": "1.0.0",
-  "description": "Super Cool Framework",
+  "description": "Real Estate",
   "main": "index.js",
-  "author": "joe santos garcia",
+  "author": "stefano corra",
   "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
+  "homepage": "http://stefanocorra.com/",
   "dependencies": {
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
